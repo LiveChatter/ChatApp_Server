@@ -1,0 +1,65 @@
+body {
+  background-image: url('http://cdn29.us1.fansshare.com/images/backgroundhd/romantic-big-beach-space-in-bridge-with-light-effect-in-cityscape-background-hd-wallpaper-abstract-hd-wallpaper-picture-background-hd-1267972802.jpg');
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  left: 0;
+  margin: 0;
+  position: relative;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.nav a {
+  text-shadow: 2px 2px black;
+  color: #F0FFFF;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.nav li {
+  display: inline;
+}
+
+#header {
+  /*opacity: 0.4;*/
+  background-position:top;
+  background-repeat: no-repeat;
+  height: 550px;
+  background-size: cover;
+}
+
+#header .container {
+  position: relative;
+  top:50px;
+}
+
+#header a {
+  color: pink;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+#header h1 {
+  color: #fff;
+  font-size: 48px;
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+#header p {
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 2px 2px black;
+}
+
+#title h1 {
+
+  color: #000000;
+  font-size: 70px;
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px white;
+}

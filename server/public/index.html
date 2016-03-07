@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chit Chat</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="./main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Sign Up</a></li>
+        </ul>
+        <ul class="pull-right">
+        </ul>
+      </div>
+    </div>
+
+  <div class="nav">
+    <div class="container">
+      <center>
+        <div id="title" class="container">
+          <h1> CHIT CHAT <i class="fa fa-comments-o"></i></h1>
+        </div>
+        <div id="header" class="container">
+          <div class="container">
+            <p class="lead">
+              <b>An easy and fast way
+                  <br>to chat with your friends.</b>
+            </p>
+            <br>
+            <br>
+            <form class="form-inline">
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              </div>
+              <br>
+              <br>
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              </div>
+              <br>
+              <br><br>
+              <button type="submit" class="btn btn-default"><i class="fa fa-sign-in"></i> Sign In</button>
+            </form>
+
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function() {
+            $('#login').click(function() {
+              $.getJSON('localhost:8080/login', {
+                dataType: 'jsonp'
+              }, function() {
+                alert('successful post')
+              });
+            })
+          })
+        </script>
+
+    </div>
+  </div>
+  </center>
+</body>
+
+</html>
