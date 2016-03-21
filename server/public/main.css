@@ -1,5 +1,14 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
+  height: 100%;
+  width: 100%;
   background-image: url('http://cdn29.us1.fansshare.com/images/backgroundhd/romantic-big-beach-space-in-bridge-with-light-effect-in-cityscape-background-hd-wallpaper-abstract-hd-wallpaper-picture-background-hd-1267972802.jpg');
+  background-size: auto;
+  background-color: #2c3e50;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   left: 0;
   margin: 0;
@@ -15,7 +24,7 @@ a {
   color: #F0FFFF;
   font-size: 11px;
   font-weight: bold;
-  padding: 14px 10px;
+  padding: 24px 20px;
   text-transform: uppercase;
 }
 
@@ -52,14 +61,36 @@ a {
 #header p {
   font-size: 24px;
   color: #fff;
-  text-shadow: 2px 2px black;
+  /*text-shadow: 2px 2px black;*/
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 #title h1 {
-
-  color: #000000;
+  color: black;
   font-size: 70px;
   font-family: 'Shift', sans-serif;
   font-weight: bold;
-  text-shadow: 2px 2px white;
+  /*text-shadow: 2px 2px white;*/
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/*CHAT HIDDEN*/
+
+.chat {
+  color: white;
+  height: 100%;
+  width: 100%;
+  background-color: #2c3e50;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  left: 0;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.chat h1{
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }

@@ -2,7 +2,9 @@
 
 const Path = require('path');
 const Hapi = require('hapi');
+const SocketIO = require('socket.io');
 const Inert = require('inert');
+var currentName = [];
 
 const server = new Hapi.Server({
   connections:{
@@ -16,6 +18,12 @@ server.connection({
     port: 8080
 });
 
+const io = SocketIO.listen(server.listener);
+io.sockets.on('connection', (socket) => {
+
+    socket.emit({ msg: 'welcome' });
+});
+
 server.register(require('inert'), (err) => {
 
     if (err) {
@@ -23,27 +31,33 @@ server.register(require('inert'), (err) => {
     }
 
     server.route({
-        method: 'GET',
-        path: '/login',
+        method: 'POST',
+        path: '/authenticate',
         handler: function (request, reply) {
-          console.log('posting to /login');
-          console.log('email', request.params.email);
-          console.log('password', request.params.password);
-          if (request.params.email.toString().toLowerCase() == "itsanakatrina@gmail.com")
+          if (currentName.indexOf(request.payload.username.toLowerCase()) == -1){
+            currentName.push(request.payload.username.toLowerCase());
+            console.log("List of current users : " + currentName);
             reply({
-              'auth': true,
-              'statusCode': 200,
-              'friendslist':[{
-                'userName' : "BigB",
-                id: 1
-              },{
-                'userName' : "UncleOcean",
-                id: 2
-              },{
-                'userName' : "JosieJo",
-                id: 3
-              }]
-          });
+                'auth': true,
+                'statusCode': 200,
+                'status':"OK",
+                'username':request.payload.username
+            });
+          }
+          else {
+            reply({
+              'auth': false,
+              'statusCode': 401,
+              'status':"Unauthorized"
+            });
+          }
+        }
+    });
+    server.route({
+        method: 'GET',
+        path: '/main.css',
+        handler: function (request, reply) {
+            reply.file('./server/public/main.css');
         }
     });
 
